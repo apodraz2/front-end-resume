@@ -1,3 +1,4 @@
+/*jshint loopfunc: true */
 var bio = {
     "name" : "Susan Wu",
     "role" : "Web Developer",
@@ -5,23 +6,23 @@ var bio = {
         mobile : "773-896-6616",
         email : "wususa@gmail.com",
         github : "git",
-        location : "Chicago, IL",
+        location : "Chicago, IL"
         
     },
     skills : ["interpersonal skills", "problem solving", "creative", "bulldog"],
     "welcomeMessage": "Mahalo",
-    "biopic": "images/fry.jpg",
+    "biopic": "images/fry.jpg"
 };
 
 
-var education = { 
-    "schools" : [ 
+var education = {
+    "schools" : [
         {
         name: "Dominican University",
         location: "River Forest, IL",
         degree: "BA",
         dates: "2008",
-        majors: ["Apparel Design"], 
+        majors: ["Apparel Design"]
         }
     ],
     "onlineCourses" : [
@@ -29,7 +30,7 @@ var education = {
         title: "Front-End Web Design",
         school: "Udacity",
         dates: "2017",
-        url: "udacity.com",
+        url: "udacity.com"
         }
     ],
     
@@ -100,26 +101,21 @@ $("#header").append(HTMLskillsStart);
 bio.display();
 
 
-education.display = function () {
-    
-    
-    
-        education.schools.forEach(function(school) {
-            $("#education").append(HTMLschoolStart); 
-            var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
-            var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
-            $(".education-entry:last").append(formattedSchoolName);
-            $(".education-entry:last").append(formattedSchoolDates);
+education.display = function() {
+    education.schools.forEach(function (school) {
+        $("#education").append(HTMLschoolStart); 
+        var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+        var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
+        $(".education-entry:last").append(formattedSchoolName);
+        $(".education-entry:last").append(formattedSchoolDates);
       
-            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
-            $(".education-entry:last").append(formattedSchoolLocation);
+        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
+        $(".education-entry:last").append(formattedSchoolLocation);
+        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
+        $(".education-entry:last").append(formattedSchoolDegree);
  
-            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
-            $(".education-entry:last").append(formattedSchoolDegree);
- 
-            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.majors);
-            $(".education-entry:last").append(formattedSchoolMajor);
-        });
+        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.majors);           $(".education-entry:last").append(formattedSchoolMajor);
+    });
 
     
     
